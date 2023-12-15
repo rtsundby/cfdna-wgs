@@ -1,0 +1,31 @@
+######
+# Note: you should have a seperate directory called "cfdna-wgs-data" which is where \
+# reference genomes/adapters should be placed (subdirectory -> ./cfdna-wgs-data/ref/) \
+# and where the sample-list shoul be (subdirectory -> ./cfdna-wgs-data/inputs/) \
+# I have put a mock of this on BOX:
+# You will still need to download the hg19 reference genome and index w/ bwa index /path/*.fa \
+# Download here https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/
+#####
+
+###   Parameters intended to be common across workflows   ###
+
+datadir: "/data/ShernLiquidBx/cfdna-wgs-data"
+outdir: "/data/ShernLiquidBx/cfdna-wgs-data"
+blklist: "/data/ShernLiquiBx/cfdna-wgs-data/ref/hg19/hg19-blacklist.v2.bed"
+genome_fasta: "/data/ShernLiquidBx/cfdna-wgs-data/ref/hg19/hg19.fa"
+genome_ref: "/data/ShernLiquidBx/crdna-wgs-data/ref/hg19/hg19.fa"
+ref_dir: "/data/ShernLiquidBx/cfdna-wgs-data/ref/hg19"
+qcdir: "/data/ShernLiquidBx/cfdna-wgs-data/analysis/qc"
+threads: 4
+raw_fastq: "/data/ShernLiquidBx/FASTQ/seq_libs"
+samples: "/data/ShernLiquidBx/cfdna-wgs-data/inputs/libraries.tsv"
+adapters: "/data/ShernLiquidBx/cfdna-wgs-data/ref/TruSeq3-PE.fa"
+
+###   Unique properties from this repo   ###
+cfdna_wgs_repo: "/data/ShernLiquidBx/cfdna-wgs"
+
+downsample:
+  - "10"
+  # - "0.004"
+
+gc5mb: "/data/ShernLiquidBx/cfdna-wgs-data/ref/gc5mb.bed"
